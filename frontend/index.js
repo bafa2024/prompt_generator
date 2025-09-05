@@ -2,7 +2,8 @@ document.getElementById('promptForm').addEventListener('submit', async function(
     e.preventDefault();
     const topic = document.getElementById('topic').value;
     const resultDiv = document.getElementById('result');
-    resultDiv.textContent = 'Generating...';
+    resultDiv.querySelector(".loader").style.display = "initial";
+    resultDiv.style.display = "block";
     try {
         const response = await fetch('http://localhost:8000/generate', {
             method: 'POST',
@@ -13,7 +14,9 @@ document.getElementById('promptForm').addEventListener('submit', async function(
         });
         const data = await response.json();
         resultDiv.textContent = data.prompt;
+        resultDiv.querySelector(".loader").style.display = "none";
     } catch (err) {
         resultDiv.textContent = 'Error generating prompt.';
+        resultDiv.querySelector(".loader").style.display = "none";
     }
 });

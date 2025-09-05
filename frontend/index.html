@@ -10,10 +10,12 @@
     <div class="container">
         <h1>Creative Prompt Generator</h1>
         <form id="promptForm">
-            <textarea id="topic" placeholder="Enter a topic..." required></textarea>
+            <textarea id="topic" placeholder="Enter a topic..." required rows="7"></textarea>
             <button type="submit">Generate Prompt</button>
         </form>
-        <div id="result"></div>
+        <div id="result">
+            <span class="loader"></span>
+        </div>
     </div>
     <script src="index.js"></script>
 </body>
