@@ -77,12 +77,13 @@ button:hover {
     margin: auto;
 }
 .loader.loader::before {
-    top: 45px;
+    top: 25px;
 }
 .loader:after {
     color: #FF3D00;
     transform: rotateY(70deg);
     animation-delay: .4s;
+    top:-24px;
 }
 
 @keyframes rotate {

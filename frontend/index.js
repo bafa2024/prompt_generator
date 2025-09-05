@@ -13,10 +13,10 @@ document.getElementById('promptForm').addEventListener('submit', async function(
             body: JSON.stringify({ topic })
         });
         const data = await response.json();
-        resultDiv.textContent = data.prompt;
+        resultDiv.querySelector("#result-txt").textContent = data.prompt;
         resultDiv.querySelector(".loader").style.display = "none";
     } catch (err) {
-        resultDiv.textContent = 'Error generating prompt.';
+        resultDiv.querySelector("#result-txt").textContent = 'Error generating prompt.';
         resultDiv.querySelector(".loader").style.display = "none";
     }
 });
